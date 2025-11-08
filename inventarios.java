@@ -16,6 +16,17 @@ public class inventarios {
         System.out.println("Teclea los días que tarda el proveedor en entregar el pedido (L):");
         L = sc.nextInt();
 
-        
+        y = Math.sqrt((2 * K * D) / h);
+        System.out.println("Valor de y*: " + y);
+        t0 = y / D;
+        System.out.println("Valor de t0: " + t0);
+        n = (int) (L / t0);
+        System.out.println("Valor de n: " + n);
+        Le = L - (n * t0);
+        System.out.println("Valor de Le: " + Le);
+        Pr = Le * D;
+        System.out.println("Valor de Pr: " + Pr);
+        TCU = (K / y / D ) + (h * (y / 2));
+        System.out.println("Valor de TCU: " + TCU);
     }
 }
