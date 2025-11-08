@@ -28,5 +28,7 @@ public class inventarios {
         System.out.println("Valor de Pr: " + Pr);
         TCU = (K / y / D ) + (h * (y / 2));
         System.out.println("Valor de TCU: " + TCU);
+
+        System.out.println("Debe comprar " + (int)y + " unidades cada " + n + " dias, o cuando el nivel de inventario descienda a " + (int)Pr + " unidades.");
     }
 }
