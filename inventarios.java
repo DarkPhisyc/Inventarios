@@ -7,23 +7,24 @@ public class inventarios {
         double K, D, L, y, h, t0, Le, Pr, TCU;
 
         do {
-            System.out.println("\n \nRESOLVER MODELOS DE INVENTARIOS");
-            System.out.println("Por favor teclea la opcion que deseas realizar:");
+            System.out.println("\n \n    RESOLVER MODELOS DE INVENTARIOS");
+            System.out.println("\t \tMenu:");
             System.out.println("1. Resolver Modelo de Inventario Clasico:");
             System.out.println("2. Resolver Modelo de Inventario con Descuento:");
             System.out.println("3. Salir");
+            System.out.println("\nTeclea la opcion que deseas realizar:");
             opcion = sc.nextInt();
 
             switch(opcion) {
                 case 1:
                     System.out.println("Teclea el valor de la demanda diaria (D):");
-                    D = sc.nextInt();
+                    D = sc.nextDouble();
                     System.out.println("Teclea el valor del costo de pedido (K):");
-                    K = sc.nextInt();
+                    K = sc.nextDouble();
                     System.out.println("Teclea el valor del costo de mantenimiento (h):");
-                    h = sc.nextInt();
+                    h = sc.nextDouble();
                     System.out.println("Teclea los días que tarda el proveedor en entregar el pedido (L):");
-                    L = sc.nextInt();
+                    L = sc.nextDouble();
 
                     y = Math.sqrt((2 * K * D) / h);
                     System.out.println("Valor de y*: " + y);
@@ -40,6 +41,8 @@ public class inventarios {
 
                     System.out.println("Debe comprar " + (int)y + " unidades cada " + n + " dias, o cuando el nivel de inventario descienda a " + (int)Pr + " unidades.");
                     break;
+                case 2:
+                    System.out.println("Teclea el valor de la demanda diaria ");
             }
         } while (opcion != 3);
     }
