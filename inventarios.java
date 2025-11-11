@@ -3,10 +3,9 @@ import java.util.Scanner;
 public class inventarios {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int nC, n, opcion;
-        double K, D, L, y, h, t0, Le, Pr, TCU, i;
+        int nC, n, m, opcion;
+        double K, D, L, y, h, t0, Le, Pr, TCU, i, mTCU;
         double[] C, hD, yD, TCUd;
-
         do {
             System.out.println("\n \n    RESOLVER MODELOS DE INVENTARIOS");
             System.out.println("\t \tMenu:");
@@ -41,7 +40,6 @@ public class inventarios {
                     System.out.println("Valor de TCU: " + TCU);
                     System.out.println("Debe comprar " + (int)y + " unidades cada " + (int)t0 + " dias, o cuando el nivel de inventario descienda a " + (int)Pr + " unidades.");
                     break;
-
                 case 2:
                     System.out.println("\nMODELO DE INVENTARIO CON DESCUENTO");
                     System.out.println("Teclea el valor de la demanda diaria (D):");
@@ -68,6 +66,22 @@ public class inventarios {
                         System.out.println("y" + (j + 1) + ": " + yD[j]);
                         System.out.println("TCU" + (j + 1) + ": " + TCUd[j]);
                     }
+                    mTCU = TCUd[0];
+                    m = 0;
+                    for(int j = 1; j < nC; j++) {
+                        if(TCUd[j] < mTCU) {
+                            mTCU = TCUd[j];
+                            m = j;
+                        }
+                    }
+                    System.out.println("Debe comprar C" + (m + 1) + " para un costo minimo total de " + mTCU);
+                    break;
+                case 3:
+                    System.out.println("Saliendo...");
+                    break;
+                default:
+                    System.out.println("OPCION NO VALIDA");
+                    break;
             }
         } while (opcion != 3);
     }
