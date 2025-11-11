@@ -84,5 +84,6 @@ public class inventarios {
                     break;
             }
         } while (opcion != 3);
+        sc.close();
     }
 }
