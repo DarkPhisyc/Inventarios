@@ -14,7 +14,6 @@ public class inventarios {
             System.out.println("3. Salir");
             System.out.println("\nTeclea la opcion que deseas realizar:");
             opcion = sc.nextInt();
-
             switch(opcion) {
                 case 1:
                     System.out.println("\nMODELO DE INVENTARIO CLASICO");
@@ -27,7 +26,7 @@ public class inventarios {
                     System.out.println("Teclea los días que tarda el proveedor en entregar el pedido (L):");
                     L = sc.nextDouble();
                     y = Math.sqrt((2 * K * D) / h);
-                    System.out.println("Valor de y*: " + y);
+                    System.out.println("\nValor de y*: " + y);
                     t0 = y / D;
                     System.out.println("Valor de t0: " + t0);
                     n = (int) (L / t0);
@@ -38,7 +37,7 @@ public class inventarios {
                     System.out.println("Valor de Pr: " + Pr);
                     TCU = (K / y / D ) + (h * (y / 2));
                     System.out.println("Valor de TCU: " + TCU);
-                    System.out.println("Debe comprar " + (int)y + " unidades cada " + (int)t0 + " dias, o cuando el nivel de inventario descienda a " + (int)Pr + " unidades.");
+                    System.out.println("\nDebe comprar " + (int)y + " unidades cada " + (int)t0 + " dias, o cuando el nivel de inventario descienda a " + (int)Pr + " unidades.");
                     break;
                 case 2:
                     System.out.println("\nMODELO DE INVENTARIO CON DESCUENTO");
@@ -62,7 +61,7 @@ public class inventarios {
                         hD[j] = C[j] * i;
                         yD[j] = Math.sqrt((2 * K * D) / hD[j]);
                         TCUd[j] = (D * C[j]) + ((D * K) / yD[j]) + (hD[j] * yD[j] / 2);
-                        System.out.println("h" + (j + 1) + ": " + hD[j]);
+                        System.out.println("\nh" + (j + 1) + ": " + hD[j]);
                         System.out.println("y" + (j + 1) + ": " + yD[j]);
                         System.out.println("TCU" + (j + 1) + ": " + TCUd[j]);
                     }
@@ -74,13 +73,13 @@ public class inventarios {
                             m = j;
                         }
                     }
-                    System.out.println("Debe comprar C" + (m + 1) + " para un costo minimo total de " + mTCU);
+                    System.out.println("\nDebe pedir C" + (m + 1) + " para un costo minimo total de " + mTCU);
                     break;
                 case 3:
-                    System.out.println("Saliendo...");
+                    System.out.println("\nSaliendo...");
                     break;
                 default:
-                    System.out.println("OPCION NO VALIDA");
+                    System.out.println("\nOPCION NO VALIDA");
                     break;
             }
         } while (opcion != 3);
