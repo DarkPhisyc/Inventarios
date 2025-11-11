@@ -4,8 +4,8 @@ public class inventarios {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int nC, n, opcion;
-        double K, D, L, y, h, t0, Le, Pr, TCU, desc;
-        double[] C;
+        double K, D, L, y, h, t0, Le, Pr, TCU, i;
+        double[] C, hD, yD, TCUd;
 
         do {
             System.out.println("\n \n    RESOLVER MODELOS DE INVENTARIOS");
@@ -50,12 +50,24 @@ public class inventarios {
                     K = sc.nextDouble();
                     System.out.println("Teclea cuantos precios se manejan (C):");
                     nC = sc.nextInt();
-                    for(int i = 0; i < nC; i++) {
-                        System.out.println("Teclea el valor de C" + (i + 1) + ":");
-                        C[i] = sc.nextDouble();
+                    C = new double[nC];
+                    hD = new double[nC];
+                    yD = new double[nC];
+                    TCUd = new double[nC];
+                    for(int j = 0; j < nC; j++) {
+                        System.out.println("Teclea el valor de C" + (j + 1) + ":");
+                        C[j] = sc.nextDouble();
                     }
                     System.out.println("Teclea el valor del descuento (%) en decimales:");
-                    desc = sc.nextDouble();
+                    i = sc.nextDouble();
+                    for(int j = 0; j < nC; j++) {
+                        hD[j] = C[j] * i;
+                        yD[j] = Math.sqrt((2 * K * D) / hD[j]);
+                        TCUd[j] = (D * C[j]) + ((D * K) / yD[j]) + (hD[j] * yD[j] / 2);
+                        System.out.println("h" + (j + 1) + ": " + hD[j]);
+                        System.out.println("y" + (j + 1) + ": " + yD[j]);
+                        System.out.println("TCU" + (j + 1) + ": " + TCUd[j]);
+                    }
             }
         } while (opcion != 3);
     }
