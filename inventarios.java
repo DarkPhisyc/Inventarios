@@ -98,4 +98,3 @@ public class inventarios {
         sc.close();
     }
 }
-
