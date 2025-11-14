@@ -67,16 +67,6 @@ public class inventarios {
                         System.out.println("y" + (j + 1) + ": " + yD[j]);
                         System.out.println("CTU" + (j + 1) + ": " + CTUd[j]);
                     }
-                    t0 = yD[0] / D;
-                    System.out.println("\nValor de t0: " + t0);
-                    n = (int) (L / t0);
-                    System.out.println("Valor de n: " + n);
-                    Le = L - (n * t0);
-                    System.out.println("Valor de Le: " + Le);
-                    Pr = Le * D;
-                    System.out.println("Valor de Pr: " + Pr);
-                    TCU = (K / yD[0] / D ) + (hD[0] * (yD[0] / 2));
-                    System.out.println("Valor de TCU: " + TCU);
                     mCTU = CTUd[0];
                     m = 0;
                     for(int j = 1; j < nC; j++) {
@@ -85,7 +75,17 @@ public class inventarios {
                             m = j;
                         }
                     }
-                    System.out.println("\nDebe pedir C" + (m + 1) + " para un costo minimo total de CTU: " + mCTU + "y un TCU de: " + TCU + ".");
+                    t0 = yD[m] / D;
+                    System.out.println("\nValor de t0: " + t0);
+                    n = (int) (L / t0);
+                    System.out.println("Valor de n: " + n);
+                    Le = L - (n * t0);
+                    System.out.println("Valor de Le: " + Le);
+                    Pr = Le * D;
+                    System.out.println("Valor de Pr: " + Pr);
+                    TCU = (K / yD[m] / D ) + (hD[m] * (yD[m] / 2));
+                    System.out.println("Valor de TCU: " + TCU);
+                    System.out.println("\nDebe pedir C" + (m + 1) + " para un costo minimo total de CTU: " + mCTU + " y un TCU de: " + TCU + ".");
                     break;
                 case 3:
                     System.out.println("\nSaliendo...");
